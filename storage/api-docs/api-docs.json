@@ -1,0 +1,87 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Demo phone application",
+        "version": "0.9"
+    },
+    "paths": {
+        "/api/phone/index": {
+            "post": {
+                "tags": [
+                    "Phone"
+                ],
+                "summary": "Список всех телефонов с поиском по полям предложений.",
+                "description": "После запроса будет получен список всех телефонов, с поиском по полям предложений",
+                "operationId": "App\\Http\\Controllers\\API\\PhoneController::index",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "color": {
+                                        "description": "Цвет телефона.",
+                                        "type": "string",
+                                        "default": "black",
+                                        "nullable": true
+                                    },
+                                    "memory": {
+                                        "description": "Память телефона.",
+                                        "type": "integer",
+                                        "default": "32",
+                                        "nullable": true
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Список телефонов.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OAPhoneResource"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "OAPhoneResource": {
+                "title": "Телефон",
+                "properties": {
+                    "brand": {
+                        "description": "Бренд.",
+                        "type": "string",
+                        "example": "Samsung"
+                    },
+                    "model": {
+                        "description": "Модель.",
+                        "type": "string",
+                        "example": "S10"
+                    },
+                    "price": {
+                        "description": "Стоимость.",
+                        "type": "integer",
+                        "example": "56000.0"
+                    },
+                    "year": {
+                        "description": "Год выпуска.",
+                        "type": "integer",
+                        "example": "2010"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
