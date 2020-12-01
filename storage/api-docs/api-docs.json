@@ -77,6 +77,11 @@
                                         "description": "Цена",
                                         "type": "integer",
                                         "default": "45000"
+                                    },
+                                    "year": {
+                                        "description": "Год",
+                                        "type": "integer",
+                                        "default": "2010"
                                     }
                                 },
                                 "type": "object"

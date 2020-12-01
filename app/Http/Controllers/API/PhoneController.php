@@ -92,6 +92,12 @@ class PhoneController extends Controller
      *                     type="integer",
      *                     default="45000"
      *                 ),
+     *                 @OA\Property(
+     *                     property="year",
+     *                     description="Год",
+     *                     type="integer",
+     *                     default="2010"
+     *                 ),
      *             )
      *         )
      *     ),
