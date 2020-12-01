@@ -24,8 +24,8 @@ class PhoneSearchRequest extends FormRequest
     public function rules()
     {
         return [
-            'color' => 'bail|string',
-            'memory' => 'bail|integer',
+            'color' => 'nullable|bail|string',
+            'memory' => 'nullable|bail|integer',
         ];
     }
 }
