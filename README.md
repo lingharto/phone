@@ -14,3 +14,5 @@ docker-compose exec app php artisan l5-swagger:generate
 
 ## Использование
 
+По адресу http://localhost/api/documentation доступна документация Swagger/OA документация по API, там же можно интерактивно протестировать API.
+Список сидов для тестирования можно найти в соответствующем классе PhoneSeeder.

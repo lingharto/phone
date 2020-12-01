@@ -130,6 +130,11 @@
                         "multipart/form-data": {
                             "schema": {
                                 "properties": {
+                                    "phone_id": {
+                                        "description": "ID связанного с предложением телефона",
+                                        "type": "integer",
+                                        "default": "1"
+                                    },
                                     "memory": {
                                         "description": "Память.",
                                         "type": "integer",

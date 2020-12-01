@@ -30,6 +30,12 @@ class PhoneOfferController extends Controller
      *             mediaType="multipart/form-data",
      *             @OA\Schema(
      *                 @OA\Property(
+     *                     property="phone_id",
+     *                     description="ID связанного с предложением телефона",
+     *                     type="integer",
+     *                     default="1"
+     *                 ),
+     *                 @OA\Property(
      *                     property="memory",
      *                     description="Память.",
      *                     type="integer",
