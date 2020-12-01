@@ -63,6 +63,44 @@ class PhoneController extends Controller
     }
 
     /**
+     * Создание телефона.
+     *
+     * @OA\Post(
+     *     path="/api/phone/create",
+     *     tags={"Phone"},
+     *     summary="Создание модели телефона.",
+     *     description="После запроса будет создан телефон",
+     *     @OA\RequestBody(
+     *         @OA\MediaType(
+     *             mediaType="multipart/form-data",
+     *             @OA\Schema(
+     *                 @OA\Property(
+     *                     property="brand",
+     *                     description="Бренд",
+     *                     type="string",
+     *                     default="Samsung"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="model",
+     *                     description="Модель",
+     *                     type="string",
+     *                     default="S9"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="price",
+     *                     description="Цена",
+     *                     type="integer",
+     *                     default="45000"
+     *                 ),
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="JSON c полем 'message', success - все прошло успешно, failed - что-то пошло не так"
+     *     )
+     * )
+     *
      * @param PhoneCreateRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
@@ -77,6 +115,25 @@ class PhoneController extends Controller
     }
 
     /**
+     * Удаление телефона.
+     *
+     * @OA\Get(
+     *     path="/api/phone/delete/{id}",
+     *     tags={"Phone"},
+     *     summary="Удаление телефона.",
+     *     description="Удаление телефона по его ID",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="Идентификатор телефона",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="JSON c полем 'message', success - все прошло успешно, failed - что-то пошло не так"
+     *     )
+     * )
      * @param $id
      * @return \Illuminate\Http\JsonResponse
      */

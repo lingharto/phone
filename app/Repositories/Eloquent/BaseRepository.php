@@ -48,6 +48,9 @@ class BaseRepository implements EloquentRepositoryInterface
     public function delete($id): bool
     {
         $item = $this->find($id);
+        if (!$item) {
+            return false;
+        }
         $item->delete();
         return true;
     }

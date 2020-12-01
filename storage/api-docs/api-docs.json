@@ -49,6 +49,109 @@
                     }
                 }
             }
+        },
+        "/api/phone/create": {
+            "post": {
+                "tags": [
+                    "Phone"
+                ],
+                "summary": "Создание модели телефона.",
+                "description": "После запроса будет создан телефон",
+                "operationId": "App\\Http\\Controllers\\API\\PhoneController::create",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "brand": {
+                                        "description": "Бренд",
+                                        "type": "string",
+                                        "default": "Samsung"
+                                    },
+                                    "model": {
+                                        "description": "Модель",
+                                        "type": "string",
+                                        "default": "S9"
+                                    },
+                                    "price": {
+                                        "description": "Цена",
+                                        "type": "integer",
+                                        "default": "45000"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "JSON c полем 'message', success - все прошло успешно, failed - что-то пошло не так"
+                    }
+                }
+            }
+        },
+        "/api/phone/delete/{id}": {
+            "get": {
+                "tags": [
+                    "Phone"
+                ],
+                "summary": "Удаление телефона.",
+                "description": "Удаление телефона по его ID",
+                "operationId": "App\\Http\\Controllers\\API\\PhoneController::delete",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Идентификатор телефона",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON c полем 'message', success - все прошло успешно, failed - что-то пошло не так"
+                    }
+                }
+            }
+        },
+        "/api/phoneOffer/create": {
+            "post": {
+                "tags": [
+                    "PhoneOffer"
+                ],
+                "summary": "Создание предложения телефона.",
+                "description": "После запроса будет создано предложение телефона.",
+                "operationId": "App\\Http\\Controllers\\API\\PhoneOfferController::create",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "memory": {
+                                        "description": "Память.",
+                                        "type": "integer",
+                                        "default": "32"
+                                    },
+                                    "color": {
+                                        "description": "Цвет",
+                                        "type": "string",
+                                        "default": "black"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "JSON c полем 'message', success - все прошло успешно, failed - что-то пошло не так"
+                    }
+                }
+            }
         }
     },
     "components": {
